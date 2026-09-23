@@ -1,0 +1,19 @@
+name: JAVA CI
+on: 
+ push:
+  branches: ["main"]
+  jobs:
+   build:
+    runs-on: ubuntu-latest
+    steps:
+     - name: Checkout-code
+       uses: actions/checkout@v4
+     - name: Set Up java
+       uses: sctions/checkout@v4
+       with:
+        distribution: 'temurin'
+        java-version: 17
+     - name: Compile java code
+       run: javac app.java
+     - name: Run java code
+       run: java app
